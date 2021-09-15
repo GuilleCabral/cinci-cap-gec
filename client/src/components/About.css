@@ -36,7 +36,6 @@
     justify-content: center;
     padding: 40px 0 0 0;
     display: block;
-    overflow: hidden;
 }
 .container-2, .container-4{
     background-color: rgb(48, 57, 66);
