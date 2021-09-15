@@ -8,10 +8,6 @@ import images from "../images/carousel11.jpg";
 import image2 from "../images/carousel12.jpg";
 import image3 from "../images/carousel13.jpg";
 import image4 from "../images/carousel14.jpg";
-import Image1 from "../media/image1.jpg";
-import Image2 from "../media/image2.jpg";
-import Image3 from "../media/image3.jpg";
-import ContactForm from "./ContactForm";
 
 const Home = () => {
 
@@ -19,7 +15,7 @@ const Home = () => {
   const [attractions, setattractions] = useState([]);
   const [titleOne, setTitleOne] = useState('');
   const [category, setCategory] = useState("park");
-console.log(attractions);
+  // console.log(attractions);
 
   
   //get year for articles
