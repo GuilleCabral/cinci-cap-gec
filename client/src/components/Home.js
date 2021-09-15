@@ -43,6 +43,7 @@ console.log(attractions);
     e.preventDefault();
     setCategory(e.target.innerHTML);
   }
+  <div><p></p></div>
 
   return (
     <div className="container-fluid">
