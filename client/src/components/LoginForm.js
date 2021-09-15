@@ -22,7 +22,7 @@ const onSubmit = (e) => {
         password: password
     }
 
-   axios.get(BACKEND_URL +' /signup/add', newLogin)
+   axios.post(BACKEND_URL +' /signup/add', newLogin)
    .then(res => console.log(res.data))
    .catch(err => console.log(err));
 
