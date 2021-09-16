@@ -75,7 +75,9 @@ h3{
 td{
     text-align: center;
 }
-
+#eventRow{
+    color: rgb(145, 148, 153);
+}
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) {
     /*container 1 - header events */

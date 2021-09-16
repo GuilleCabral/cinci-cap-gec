@@ -4,10 +4,10 @@ import axios from "axios";
 import AttractionCard from "./AttractionCard";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import images from "../images/carousel11.jpg";
+import image1 from "../images/carousel11.jpg";
 import image2 from "../images/carousel12.jpg";
 import image3 from "../images/carousel13.jpg";
-import image4 from "../images/carousel14.jpg";
+// import image4 from "../images/carousel12.jpg";
 
 const Home = () => {
 
@@ -21,10 +21,7 @@ const Home = () => {
   //get year for articles
   const date = new Date();
   const day = date.getFullYear();
-
- 
-
-
+  
   useEffect(() => {
     const getArticles = async () => {
       const res = await axios.get(BACKEND_URL + "/blogs/" + category );
@@ -45,37 +42,39 @@ const Home = () => {
     <div className="container-fluid">
       <div className="carouselDown">
         <AliceCarousel autoPlay autoPlayInterval="3000" infinite="true">
-          <img src={images} className="sliderimg" alt="" />
+          <img src={image1} className="sliderimg" alt="" />
           <img src={image2} className="sliderimg" alt="" />
           <img src={image3} className="sliderimg" alt="" />
-          <img src={image4} className="sliderimg" alt="" />
+          {/* <img src={image4} className="sliderimg" alt="" /> */}
         </AliceCarousel>
       </div>
 
-      <div className="categoryChoice text-center">
-        <div className="catOne">
-          <i class="fas fa-parking"></i>
-          <h1 onClick={categoryChange}>Park</h1>
-        </div>
-        <div className="catOne">
-          <i class="fas fa-utensils catOneicon"></i>
-          <h1 onClick={categoryChange}>Food</h1>
-        </div>
-        <div className="catOne">
-          <i class="fas fa-star"></i>
-          <h1 onClick={categoryChange}>Activities</h1>
-        </div>
-        <div className="catOne">
-          <i class="fas fa-cocktail"></i>
-          <h1 onClick={categoryChange}>NightLife</h1>
-        </div>
-        <div className="catOne">
-          <i class="fas fa-bus-alt"></i>
-          <h1 onClick={categoryChange}>Transport</h1>
-        </div>
-        <div className="catOne" >
-          <i class="fas fa-feather"></i>
-          <h1 onClick={categoryChange}>Art</h1>
+      <div className="cats bg-dark">
+        <div className="row cat-row">
+          <div onClick={categoryChange} className="col cat text-center" id="park">
+          <i class="fas fa-parking fa-3x"></i>
+          <h5>Park</h5>
+          </div>
+          <div onClick={categoryChange} className="col cat text-center" id="food">
+          <i class="fas fa-utensils fa-3x"></i>
+          <h5>Food</h5>
+          </div>
+          <div onClick={categoryChange} className="col cat text-center" id="activity">
+          <i class="fas fa-star fa-3x"></i>
+          <h5>Activities</h5>
+          </div>
+          <div onClick={categoryChange} className="col cat text-center" id="nightlife">
+          <i class="fas fa-cocktail fa-3x"></i>
+          <h5>NightLife</h5>
+          </div>
+          <div onClick={categoryChange} className="col cat text-center" id="transport">
+          <i class="fas fa-bus-alt fa-3x"></i>
+          <h5>Transport</h5>
+          </div>
+          <div onClick={categoryChange} className="col cat text-center" id="art">
+          <i class="fas fa-feather fa-3x"></i>
+          <h5 >Art</h5>
+          </div>
         </div>
       </div>
 
@@ -92,6 +91,7 @@ const Home = () => {
                 id="attractImage">
                 <AttractionCard
                   id={attraction.id}
+                  website={attraction.websiteUrl}
                   category={attraction.category}
                   date={attraction.date}
                   title={attraction.title}

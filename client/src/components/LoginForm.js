@@ -26,10 +26,43 @@ const onSubmit = (e) => {
    .then(res => console.log(res.data))
    .catch(err => console.log(err));
 
+   let toggler = document.getElementById("loginForm");
+
+   let formText = document.getElementsByClassName("login-text");
+   formText[0].innerHTML = "SUCCESS!";
+
+    setTimeout(() => {
+      if (!toggler.classList.contains("active")) {
+        toggler.classList.add("active");
+      }
+      setUsername("");
+      setPassword("");
+      
+    }, 1000);
+
+
 }
 
+const togglePopUp = (e) => {
+    let toggler =  document.getElementById('loginForm');
+
+    if(e.target.classList.contains("login-form")){
+        toggler.classList.add("active");
+    }
+}
+
+useEffect(() => {
+    if(!document.getElementById('loginForm').classList.contains("active")){
+        document.addEventListener('click', togglePopUp);
+    }
+    let loginText = document.getElementsByClassName("login-text");
+
+    loginText[0].innerHTML = "SIGN IN";
+
+}, [isShowLogin]);
+
     return (
-        <div className={ `${!isShowLogin ? "active" : ""} show`} >
+        <div id="loginForm" className={ `${!isShowLogin ? "active" : ""} show`} >
         <div className="login-form">
         <div className="form-box solid">
         <form action="/" method="POST" onSubmit={onSubmit}>
@@ -39,6 +72,7 @@ const onSubmit = (e) => {
             <input type="text"
             name="username"
             className="login-box"
+            value={username}
             onChange={onChangeName}
             />
             <br />
@@ -47,6 +81,7 @@ const onSubmit = (e) => {
             type="password"
             name="password"
             className="login-box"
+            value={password}
             onChange={onChangePass}
              /> <br /><br />
              <input type="submit" value="Login" className="login-btn" />
@@ -59,4 +94,3 @@ const onSubmit = (e) => {
 }
 
 export default LoginForm;
-

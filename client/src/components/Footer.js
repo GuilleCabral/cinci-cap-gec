@@ -7,11 +7,10 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyle.js";
-  
 const Footer = () => {
   return (
     <Box>
-      {/* <h1 style={{ color: "#2bc6ff", 
+      {/* <h1 style={{ color: "#2BC6FF", 
                    textAlign: "center", 
                    marginTop: "-50px" }}>
         GeeksforGeeks: A Computer Science Portal for Geeks
@@ -26,17 +25,17 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
+            <FooterLink href="#">Support</FooterLink>
+            <FooterLink href="#">Accessibility</FooterLink>
+            <FooterLink href="#">Coronavirus Disease (COVID-19)</FooterLink>
+            <FooterLink href="#">Newsroom</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
-            <FooterLink href="#">Uttar Pradesh</FooterLink>
-            <FooterLink href="#">Ahemdabad</FooterLink>
-            <FooterLink href="#">Indore</FooterLink>
-            <FooterLink href="#">Mumbai</FooterLink>
+            <FooterLink href="#">MASON</FooterLink>
+            <FooterLink href="#">DAYTON</FooterLink>
+            <FooterLink href="#">NOORWOOD</FooterLink>
+            <FooterLink href="#">WEST CHESTER</FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
